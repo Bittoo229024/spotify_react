@@ -1,0 +1,65 @@
+Default Light Mode
+body {
+  background-color: #fff;
+  color: #000;
+}
+
+.header {
+  background-color: #f8f9fa;
+  color: #000;
+}
+
+.navbar-nav .nav-link {
+  color: #000;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #007bff;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background-color: #121212;
+  color: #fff;
+}
+
+.header.dark-mode {
+  background-color: #343a40;
+  color: #fff;
+}
+
+.navbar-nav .nav-link {
+  color: #fff;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #ffc107;
+}
+
+/* Dark mode toggle button */
+button.btn.btn-outline-secondary i {
+  font-size: 1.5rem;
+}
+
+/* Optional: Make search form background darker in dark mode */
+form input, form button {
+  background-color: #333;
+  color: white;
+  border: 1px solid #444;
+}
+
+/* Ensure responsiveness */
+@media (max-width: 768px) {
+  .navbar-nav {
+    text-align: center;
+  }
+
+  .navbar-toggler {
+    border-color: #fff;
+  }
+}
+
+/* Navbar Toggler icon */
+.navbar-toggler-icon {
+  background-color: #000;
+}

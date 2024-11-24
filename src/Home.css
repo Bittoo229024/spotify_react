@@ -1,0 +1,94 @@
+/* App Container */
+.app-container {
+  display: flex;
+  min-height: 100vh;
+  flex-wrap: wrap;
+}
+
+/* Left Sidebar */
+.left-sidebar {
+  background-color: #121212;
+  color: white;
+  padding: 20px;
+  position: sticky;
+  top: 0;
+  flex: 1 1 300px;  /* Allows sidebar to grow and shrink */
+  height: 100vh;
+}
+
+/* Sidebar Header */
+.library-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.add-button {
+  background-color: #1db954;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  padding: 0 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.library-content .card {
+  background-color: #1a1a1a;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.card h5 {
+  margin-bottom: 10px;
+}
+
+.footer {
+  font-size: 0.8rem;
+  color: #b3b3b3;
+}
+
+.language-button {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+/* Main Content */
+.main-content {
+  padding: 20px;
+  flex: 1 1 100%;  /* Takes up the remaining space, and shrinks to full width on smaller screens */
+}
+
+/* Carousel Image Styling */
+.carousel-img {
+  height: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+@media (max-width: 768px) {
+  .carousel-img {
+    height: 250px;
+  }
+
+  .main-content {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .carousel-img {
+    height: 200px;
+  }
+}
+
+/* Adjust button size in smaller screens */
+.btn {
+  font-size: 0.9rem;
+  padding: 8px 15px;
+}
