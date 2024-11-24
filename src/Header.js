@@ -1,37 +1,30 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './Header.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 const Header = () => {
   const [darkMode, setDarkMode] = useState(false);
-  const navigate = useNavigate();
 
-  // Sync dark mode with localStorage to persist between page reloads
   useEffect(() => {
     const savedMode = localStorage.getItem('darkMode') === 'true';
     setDarkMode(savedMode);
     if (savedMode) {
       document.body.classList.add('dark-mode');
-      document.querySelector('.header').classList.add('dark-mode');
     } else {
       document.body.classList.remove('dark-mode');
-      document.querySelector('.header').classList.remove('dark-mode');
     }
   }, []);
 
-  // Toggle dark mode on button click
   const toggleDarkMode = () => {
     const newMode = !darkMode;
     setDarkMode(newMode);
-    localStorage.setItem('darkMode', newMode); // Store the mode in localStorage
+    localStorage.setItem('darkMode', newMode);
     if (newMode) {
       document.body.classList.add('dark-mode');
-      document.querySelector('.header').classList.add('dark-mode');
     } else {
       document.body.classList.remove('dark-mode');
-      document.querySelector('.header').classList.remove('dark-mode');
     }
   };
 
@@ -40,7 +33,7 @@ const Header = () => {
       <nav className="navbar navbar-expand-lg navbar-light">
         <div className="container">
           <Link className="navbar-brand" to="/">
-            My Website
+            <div className="brand">My Spotify</div>
           </Link>
           <button
             className="navbar-toggler"
@@ -74,20 +67,29 @@ const Header = () => {
 
             {/* Dark Mode Toggle */}
             <button
-              className="btn btn-outline-secondary ms-3"
-              onClick={toggleDarkMode}
-            >
-              {darkMode ? 'Light Mode' : 'Dark Mode'}
-            </button>
+  className="btn btn-outline-secondary ms-3"
+  onClick={toggleDarkMode}
+  style={{
+    backgroundColor: darkMode ? "#000" : "#fff", // Background color changes based on mode
+    color: darkMode ? "#fff" : "#000", // Text color for better visibility
+    border: "none", // Optional: Remove border for a cleaner look
+    padding: "10px", // Optional: Add padding for a better design
+    borderRadius: "5px", // Optional: Add rounded corners
+    transition: "background-color 0.3s ease, color 0.3s ease", // Smooth transition
+  }}
+>
+  {darkMode ? (
+    <i className="material-icons"></i> // Light Mode Icon
+  ) : (
+    <i className="fas fa-plus"></i> // Dark Mode Icon
+  )}
+</button>
+
 
             {/* Sign In and Sign Up Buttons */}
             <div className="ms-3">
-              {/* <Link to="/signin"> */}
-                <button className="btn btn-primary me-2">Sign In</button>
-              {/* </Link> */}
-              {/* <Link to="/signup"> */}
-                <button className="btn btn-secondary">Sign Up</button>
-              {/* </Link> */}
+              <button className="btn btn-primary me-2">Sign In</button>
+              <button className="btn btn-secondary">Sign Up</button>
             </div>
           </div>
         </div>
