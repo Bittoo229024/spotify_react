@@ -1,11 +1,11 @@
 Default Light Mode
 body {
   background-color: #fff;
-  color: #000;
+  color: #684747;
 }
 
 .header {
-  background-color: #0c0c0c;
+  background-color: #ac5c5c;
   color: #000;
 }
 
@@ -63,3 +63,5 @@ form input, form button {
 .navbar-toggler-icon {
   background-color: #000;
 }
+
+
